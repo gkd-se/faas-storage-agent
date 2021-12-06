@@ -3,7 +3,7 @@ provider:
   name: openfaas
   gateway: http://127.0.0.1:8080
 functions:
-  wheel:
+  pt:
     lang: python3
     handler: ./pt
     image: whysdocker/pt:latest
