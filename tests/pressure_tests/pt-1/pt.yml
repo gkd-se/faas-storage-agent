@@ -4,7 +4,7 @@ provider:
   gateway: http://127.0.0.1:8080
 functions:
   pt:
-    lang: python3
+    lang: python-sa
     handler: ./pt
     image: whysdocker/pt:latest
     build_options:
