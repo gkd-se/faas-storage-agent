@@ -19,6 +19,7 @@ jobs:
     - name: Build agent
       run: |
         pushd ${GITHUB_WORKSPACE}/agent_server
+        git config pull.rebase false
         cargo build
         popd
             

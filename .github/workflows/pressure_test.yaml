@@ -16,6 +16,7 @@ jobs:
     - name: Git pull
       run: |
         pushd ${workdir}
+        git config pull.rebase false
         git pull
         popd
 
