@@ -5,11 +5,12 @@ import time
 def handle(req):
     a = api.Agent()
     ns_name = "test_ns"
-    test_count = 11*50
+    repeat_counter = 2
+    test_count = 11*repeat_counter
     count_ok = test_count
     time_start = time.time()
 
-    for temp_i in range(2):
+    for temp_i in range(repeat_counter):
         rand = str(random.randint(1,1000))
         key = "test_key_" + rand
         value = ("test_value" + rand).encode()
@@ -93,10 +94,10 @@ def handle(req):
         else:
             print("delete_ns test ... ok")
 
-        if count_ok == test_count :
-            res = "ok"
-        else :
-            res = "failed"
+    if count_ok == test_count :
+        res = "ok"
+    else :
+        res = "failed"
     time_end = time.time()
     print("pressure test time: {} seconds; ".format(time_end - time_start))
     print("test result: {0}. {1} passed; {2} failed".format(res, count_ok, test_count - count_ok))
