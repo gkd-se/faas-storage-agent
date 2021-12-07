@@ -4,7 +4,7 @@ import time
 
 def handle(req):
     repeat_counter = 3
-    data_size = 10
+    data_size = 1000
     
     a = api.Agent()
     ns_name = "test_ns"
