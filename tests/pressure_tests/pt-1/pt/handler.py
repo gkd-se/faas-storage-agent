@@ -13,8 +13,10 @@ def handle(req):
     # task_ok = [repeat_counter] * 11
     key = ["key"+str(random.randint(1,data_size)) for i in range(data_size)]
     value = [("val"+str(random.randint(1,data_size))).encode() for i in range(data_size)]
-    key_exists = random.shuffle(["key" + str(i) for i in range(data_size)])
-    key_delete = random.shuffle(list(set(key)))
+    key_exists = ["key" + str(i) for i in range(data_size)]
+    random.shuffle(key_exists)
+    key_delete = list(set(key))
+    random.shuffle(key_delete)
     time_set = [0] * repeat_counter
     time_exists = [0] * repeat_counter
     time_get = [0] * repeat_counter
