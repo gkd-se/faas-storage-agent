@@ -62,7 +62,7 @@ def handle(req):
     print("set: {}".format(time_set))
     print("exists: {}".format(time_exists))
     print("get: {}".format(time_get))
-    print("deete: {}".format(time_delete))
+    print("delete: {}".format(time_delete))
     
     # print("test result: {0}. {1} passed; {2} failed".format(res, count_ok, test_count - count_ok))
     return req
