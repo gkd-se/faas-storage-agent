@@ -22,14 +22,7 @@ def handle(req):
     time_all_start = time.time()
     
     c, i = a.create_ns(ns_name)
-    if c != 0:
-        count_ok -= 1
-        task_ok[0] = task_ok[0] - 1
-
     c, i = a.connect_ns(ns_name)
-    if c != 0:
-        count_ok -= 1
-        task_ok[1] = task_ok[1] - 1
 
     for temp_i in range(repeat_counter):
         
@@ -58,9 +51,6 @@ def handle(req):
         time_delete[temp_i] = time_temp_end - time_temp_start
 
     c, i = a.delete_ns(ns_name)
-    if c == 0:
-        count_ok -= 1
-        task_ok[10] = task_ok[10] - 1
 
     time_all_end = time.time()
     # if count_ok == test_count :
