@@ -63,5 +63,5 @@ jobs:
 
     - name: Pressure testing.
       run: |
-        sleep 20s
+        sleep 30s
         echo | faas-cli invoke pt
