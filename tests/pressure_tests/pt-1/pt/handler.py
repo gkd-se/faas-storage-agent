@@ -9,7 +9,7 @@ def handle(req):
     count_ok = test_count
     time_start = time.time()
 
-    for i in range(50):
+    for temp_i in range(50):
         rand = str(random.randint(1,1000))
         key = "test_key_" + rand
         value = ("test_value" + rand).encode()
