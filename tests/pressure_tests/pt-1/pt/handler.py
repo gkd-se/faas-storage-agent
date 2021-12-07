@@ -4,7 +4,7 @@ import time
 
 def handle(req):
     repeat_counter = 3
-    data_size = 100
+    data_size = 10
     
     a = api.Agent()
     ns_name = "test_ns"
@@ -42,7 +42,7 @@ def handle(req):
 
         time_temp_start = time.time()
         for ke in key_exists:
-            c, i = a.get(ke)
+            c, i, v = a.get(ke)
         time_temp_end = time.time()
         time_get[temp_i] = time_temp_end - time_temp_start
         
