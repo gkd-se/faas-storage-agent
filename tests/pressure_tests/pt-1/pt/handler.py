@@ -4,7 +4,7 @@ import time
 
 def handle(req):
     repeat_counter = 3
-    data_size = 1000
+    data_size = 10000
     
     a = api.Agent()
     ns_name = "test_ns"
@@ -60,6 +60,7 @@ def handle(req):
     # else :
         # res = "failed"
         # print(task_ok)
+    print("key_size: {}; delete_size: {}".format(data_size,len(key_delete)))
     print("pressure test time: {} seconds; ".format(time_all_end - time_all_start))
     print("set: {}".format(time_set))
     print("exists: {}".format(time_exists))
