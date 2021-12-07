@@ -55,7 +55,7 @@ jobs:
     - name: Upload integration tests to openfaas
       run: |
         pushd ${workdir}/tests/pressure_tests/pt-1
-        if [ -d "./template" ]; then
+        if [ ! -d "./template" ]; then
         cp -r ${workdir}/template ./
         fi
         sudo faas-cli up -f pt.yml
