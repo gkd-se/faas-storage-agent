@@ -24,4 +24,9 @@
 ### 应用模板
 基于openfaas平台的函数应用模板，可通过faas-cli的new命令一键创建函数应用，并通过up命令一键部署应用到集群中，代码见template/。应用模板中包含了语言库等环境信息，同时在用户编写逻辑的handler文件中以注释的形式给出了使用语言库的示例。
 
-应用模板也是编程语言相关的，目前支持了Python，其他语言的应用模板可仿照该Python模板，通过修改对应语言的openfaas官方模板得到。
+应用模板也是编程语言相关的，目前支持了Python，其他语言的应用模板可仿照该Python模板，通过修改对应语言的openfaas官方模板得到。   
+
+### RDMA库
+为使得框架满足大数据场景的高性能网络需求，框架正加入RDMA功能。由于已有的Ibv verbs库过于low level，不方便用户编程，且当前没有high-level的RDMA开源库，因此将RDMA部分独立成为一个仓库，方便其他项目使用。仓库地址：https://github.com/gkd-se/async-rdma    
+
+在本项目中，使用RDMA开发了mini-redis，一个简易的高速数据库，用于演示代理系统通过RDMA在函数计算用户无感知的情况下提升性能的案例。仓库地址：https://github.com/gkd-se/async-rdma

@@ -1,5 +1,15 @@
 # 使用说明
-以下内容介绍本项目的使用方法，也可参考.github/目录下的ci脚本理解整个项目的部署流程。本项目使用的前置条件是已经建立好了kubernetes集群并在其上部署了openfaas框架。若从零开始则可以参考该openfaas workshop lab1完成前置条件(https://github.com/openfaas/workshop/blob/master/lab1.md)。
+以下内容介绍本项目的使用方法，也可参考.github/目录下的ci脚本理解整个项目的部署流程。本项目使用的前置条件是已经建立好了kubernetes集群并在其上部署了openfaas框架。本项目实验条件为单机并用docker模拟node创建集群，操作过程见步骤0。若已有集群环境可忽略相关步骤。
+
+## 0. 集群配置
+1. 安装docker，并登录docker账号，接下来的openfaas平台和用于模拟物理集群的k3d都依赖于docker。https://github.com/openfaas/workshop/blob/master/lab1.md。   
+2. 安装kubernetes集群并在其上安装openfaas平台。openfaas平台本质上是由网关、执行引擎、性能监视器等部件组成的kubernetes分布式应用。安装过程参考:https://github.com/openfaas/workshop/blob/master/lab1b.md 在参考文档中提供了多种在单机上模拟集群和使用集群服务提供商的方式。本项目使用K3D方案，利用docker模拟node，可以以极为轻量的方式在本地模拟集群，安装使用的过程如下：
+```shell
+wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+
+k3d cluster create CLUSTER_NAMCLUSTER_NAME -s MASTER_NUM -a AGENT_NUM
+```
+可以根据实验机器能力配置模拟集群的规模。
 ## 1. 部署认证服务器
 1. 安装Django
     ```
