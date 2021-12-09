@@ -39,7 +39,6 @@ class Agent:
 
     def get_agent_url(self):
         # TODO: Using a remote storage agent now, and the local agnet will come soon.
-        # url = os.environ['agent_url']
         url = "sa-svc:10086"
         return url
 

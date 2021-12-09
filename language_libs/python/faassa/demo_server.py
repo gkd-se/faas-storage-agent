@@ -1,12 +1,4 @@
-'''
-Author: why
-Date: 2021-07-28 14:06:51
-LastEditTime: 2021-07-28 14:13:32
-LastEditors: why
-Description: 
-FilePath: /slssa/language_libs/python/faas-storage-agent/test_server.py
-
-'''
+#unused now.
 import logging
 from typing import SupportsComplex
 import grpc
