@@ -1,15 +1,5 @@
+//This component is used to handle redis date requests for user functions
 use std::collections::HashMap;
-
-/*
- * @Author: why
- * @Date: 2021-08-03 21:38:29
- * @LastEditTime: 2021-08-13 19:49:47
- * @LastEditors: why
- * @Description: 
- * @FilePath: /master/agent_server/src/redis_sa.rs
- * 
- */
- 
 use redis::Commands;
 use crate::faas_storage_agent::*;
 use crate::storage_ns::{Backend, BackendNamespace, Namespace};
@@ -36,11 +26,6 @@ impl Metadata {
             port: 6379
         }
     }
-
-    // pub fn get_local_url(&self) -> String{
-    //     let url = format!("redis://{}:{}", self.hostname, self.port.to_string());
-    //     url
-    // }
 
     pub fn get_remote_url(&self) -> String{
         // url format redis://[<username>][:<password>@]<hostname>[:port][/<db>]

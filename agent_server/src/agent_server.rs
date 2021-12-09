@@ -1,13 +1,4 @@
-/*
- * @Author: why
- * @Date: 2021-07-31 16:58:16
- * @LastEditTime: 2021-08-15 04:19:53
- * @LastEditors: why
- * @Description: 
- * @FilePath: /master/agent_server/src/agent_server.rs
- * 
- */
-
+//This is the main logic for forwarding user requests.
 mod storage_ns;
 mod redis_sa;
 mod faas_storage_agent;

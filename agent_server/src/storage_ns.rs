@@ -1,14 +1,6 @@
-/*
- * @Author: why
- * @Date: 2021-08-06 10:09:29
- * @LastEditTime: 2021-08-12 16:33:29
- * @LastEditors: why
- * @Description: 
- * @FilePath: /sa/agent_server/src/storage_ns.rs
- * 
- */
+//This component is used to handle namespace requests for user functions
 use std::collections::HashMap;
-use crate::{redis_sa::{*, self}};
+use crate::redis_sa::{*, self};
 use redis::*;
 
 #[derive(PartialEq,Clone,Debug)]
