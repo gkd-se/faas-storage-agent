@@ -520,7 +520,7 @@ async fn validate_token(_token: &str) -> Result<AuthenticationInfo, bool> {
 
 #[test]
 fn validate_token_test(){
-    validate_token("test_token");
+    validate_token("test_token").unwrap();
 }
 
 #[test]
