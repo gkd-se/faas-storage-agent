@@ -78,7 +78,7 @@ pub fn connect_ns(ns: Namespace) -> ns_resp {
     let rv = redis::Client::open(md.get_remote_url());
     let mut resp = ns_resp::default();
     match rv {
-        Ok(client) => {
+        Ok(_client) => {
             resp.set_err_code(0);
             resp.set_err_info(String::from("connect successfully"));
         },
@@ -203,7 +203,6 @@ mod tests {
 
     use crate::redis_sa::*;
     use crate::storage_ns::*;
-    use crate::faas_storage_agent;
 
     fn get_test_data_req(key: &str, value: &str) -> data_req{
         let mut req = data_req::new();
