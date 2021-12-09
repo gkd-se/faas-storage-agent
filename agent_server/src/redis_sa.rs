@@ -217,9 +217,8 @@ mod tests {
         let mut nsm = NsManager::new(&md);
         let backend = Backend::Redis(Metadata::default());
         nsm.new_backend_ns("connect_test_client_id", "connect_test_ns_name", backend);
-        let mut resp = ns_resp::new();
         if let Ok(ns) = nsm.get_backend_ns("connect_test_client_id", "connect_test_ns_name"){
-            resp = connect_ns(ns.clone());
+            let resp = connect_ns(ns.clone());
             assert_eq!(resp.get_err_code(), 0, "err_code:{}  err_info:{}", resp.get_err_code(), resp.get_err_info());
             nsm.delete_backend_ns(&ns);
         }else{
@@ -233,10 +232,9 @@ mod tests {
         let mut nsm = NsManager::new(&md);
         let backend = Backend::Redis(Metadata::default());
         nsm.new_backend_ns("set_get_test_client_id", "set_get_test_ns_name", backend);
-        let mut resp = data_resp::default();
         let req = get_test_data_req("set_get_test_key", "set_get_test_value");
         if let Ok(ns) = nsm.get_backend_ns("set_get_test_client_id", "set_get_test_ns_name"){
-            resp = set(&req, ns.clone());
+            let mut resp = set(&req, ns.clone());
             assert_eq!(resp.get_err_code(), 0, "err_code:{}  err_info:{}", resp.get_err_code(), resp.get_err_info());
             resp = get(&req, ns.clone());
             assert_eq!(resp.get_value(), "set_get_test_value".as_bytes(), "err value:{:?}", resp.get_value());
@@ -253,10 +251,9 @@ mod tests {
         let mut nsm = NsManager::new(&md);
         let backend = Backend::Redis(Metadata::default());
         nsm.new_backend_ns("exists_delete_test_client_id", "exists_delete_test_ns_name", backend);
-        let mut resp = data_resp::default();
         let req = get_test_data_req("exists_delete_test_key", "exists_delete_test_value");
         if let Ok(ns) = nsm.get_backend_ns("exists_delete_test_client_id", "exists_delete_test_ns_name"){
-            resp = set(&req, ns.clone());
+            let mut resp = set(&req, ns.clone());
             assert_eq!(resp.get_err_code(), 0, "err_code:{}  err_info:{}", resp.get_err_code(), resp.get_err_info());
             resp = exists(&req, ns.clone());
             assert_eq!(resp.get_err_code(), 0, "err_code:{}  err_info:{}", resp.get_err_code(), resp.get_err_info());
