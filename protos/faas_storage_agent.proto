@@ -1,3 +1,4 @@
+//This file defines the communication interface and data types between the FaaS function and the agent.
 syntax = "proto3";
 
 option java_multiple_files = true;
